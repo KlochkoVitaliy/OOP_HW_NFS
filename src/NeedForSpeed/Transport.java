@@ -1,6 +1,6 @@
 package NeedForSpeed;
 
-public abstract class Transport {
+public abstract class Transport implements Competing{
     private String brand;
     private String model;
     private double engineVolume;
@@ -63,4 +63,18 @@ public abstract class Transport {
 
     public abstract void finishTheMovement();
 
+    @Override
+    public String[] getPitStop() {
+        return new String[0];
+    }
+
+    @Override
+    public double[] bestLapTime() {
+        return new double[0];
+    }
+
+    @Override
+    public int[] maxSpeed() {
+        return new int[0];
+    }
 }
