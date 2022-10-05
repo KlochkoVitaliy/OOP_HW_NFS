@@ -6,7 +6,6 @@ public class Driver <B extends PassengerСar, C extends Cargo, D extends Bus>{
     private boolean driverLicense;
     private int experience;
 
-    private B passangerCar;
 
     public Driver(String fullNameDriver, boolean driverLicense, int experience) {
         this.fullNameDriver = fullNameDriver;
