@@ -1,4 +1,4 @@
-package NeedForSpeed;
+package need_for_speed;
 
 public class Cargo extends Transport implements Competing{
 
@@ -17,17 +17,17 @@ public class Cargo extends Transport implements Competing{
     }
 
     @Override
-    public String[] getPitStop() {
-        return new String[0];
+    public String getPitStop() {
+        return getPitStop();
     }
 
     @Override
-    public double[] bestLapTime() {
-        return new double[0];
+    public double bestLapTime() {
+        return bestLapTime();
     }
 
     @Override
-    public int[] maxSpeed() {
-        return new int[0];
+    public int maxSpeed() {
+        return maxSpeed();
     }
 }

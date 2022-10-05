@@ -1,4 +1,4 @@
-package NeedForSpeed;
+package need_for_speed;
 
 public abstract class Transport implements Competing{
     private String brand;
@@ -51,30 +51,9 @@ public abstract class Transport implements Competing{
         return engineVolume;
     }
 
-    public void setEngineVolume(double engineVolume) {
-        if (engineVolume == 0) {
-            this.engineVolume = 000;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-    }
 
     public abstract void startMoving();
 
     public abstract void finishTheMovement();
 
-    @Override
-    public String[] getPitStop() {
-        return new String[0];
-    }
-
-    @Override
-    public double[] bestLapTime() {
-        return new double[0];
-    }
-
-    @Override
-    public int[] maxSpeed() {
-        return new int[0];
-    }
-}
+   }

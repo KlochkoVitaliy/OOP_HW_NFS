@@ -1,10 +1,12 @@
-import NeedForSpeed.*;
+import need_for_speed.*;
 
-public class Driver <A extends Transport>{
+public class Driver <B extends PassengerСar, C extends Cargo, D extends Bus>{
 
     private String fullNameDriver;
     private boolean driverLicense;
     private int experience;
+
+    private B passangerCar;
 
     public Driver(String fullNameDriver, boolean driverLicense, int experience) {
         this.fullNameDriver = fullNameDriver;
@@ -12,7 +14,19 @@ public class Driver <A extends Transport>{
         this.experience = experience;
     }
 
-    public void startMoving(A transport) {
+    public Driver(String fullNameDriver) {
+        this(fullNameDriver,true,0);
+        this.fullNameDriver = fullNameDriver;
+
+    }
+
+    public void startMoving(B transport) {
+        System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
+    }
+    public void startMoving(C transport) {
+        System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
+    }
+    public void startMoving(D transport) {
         System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
     }
 
