@@ -1,6 +1,6 @@
 import need_for_speed.*;
 
-public class Driver <B extends PassengerСar, C extends Cargo, D extends Bus>{
+public class Driver<T extends Transport> {
 
     private String fullNameDriver;
     private boolean driverLicense;
@@ -14,27 +14,19 @@ public class Driver <B extends PassengerСar, C extends Cargo, D extends Bus>{
     }
 
     public Driver(String fullNameDriver) {
-        this(fullNameDriver,true,0);
-        this.fullNameDriver = fullNameDriver;
-
+        this(fullNameDriver, true, 0);
     }
 
-    public void startMoving(B transport) {
-        System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
-    }
-    public void startMoving(C transport) {
-        System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
-    }
-    public void startMoving(D transport) {
-        System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
+    public void startMoving(T transport) {
+              System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
     }
 
     public void finishMoving() {
-
+        System.out.println("Пора сделать остановку");
     }
 
     public void refuelTheCar() {
-
+        System.out.println("Пора заправиться");
     }
 
     public String getFullNameDriver() {

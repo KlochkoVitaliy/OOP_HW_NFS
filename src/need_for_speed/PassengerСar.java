@@ -8,26 +8,26 @@ public class PassengerСar extends Transport implements Competing{
 
     @Override
     public void startMoving() {
-
+        System.out.println("start PasCar");
     }
 
     @Override
     public void finishTheMovement() {
-
+        System.out.println("finish PasCar");
     }
 
     @Override
     public String getPitStop() {
-        return getPitStop();
+        return "Stop the line";
     }
 
     @Override
     public double bestLapTime() {
-        return bestLapTime();
+        return 2.35;
     }
 
     @Override
     public int maxSpeed() {
-        return maxSpeed();
+        return 200;
     }
 }

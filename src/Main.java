@@ -35,13 +35,13 @@ public class Main {
 
         System.out.println();
 
-Driver<PassengerСar, Cargo, Bus> vasia = new Driver<>("Vasia");
+Driver<Transport> vasia = new Driver<>("Vasia");
 vasia.startMoving(vesta);
 
-Driver<PassengerСar, Cargo, Bus> petia = new Driver<>("Petia",true,15);
+Driver<Transport> petia = new Driver<>("Petia",true,15);
 petia.startMoving(kamaz);
 
-Driver<PassengerСar, Cargo, Bus> sasha = new Driver<>("Sasha",true,30);
+Driver<Transport> sasha = new Driver<>("Sasha",true,30);
 sasha.startMoving(raf);
     }
 

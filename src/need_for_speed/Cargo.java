@@ -8,26 +8,26 @@ public class Cargo extends Transport implements Competing{
 
     @Override
     public void startMoving() {
-
+        System.out.println("start Cargo");
     }
 
     @Override
     public void finishTheMovement() {
-
+        System.out.println("finish Cargo");
     }
 
     @Override
     public String getPitStop() {
-        return getPitStop();
+        return "Остановка на перекур";
     }
 
     @Override
     public double bestLapTime() {
-        return bestLapTime();
+        return 1.4;
     }
 
     @Override
     public int maxSpeed() {
-        return maxSpeed();
+        return 120;
     }
 }

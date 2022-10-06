@@ -8,27 +8,27 @@ public class Bus extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-
+        System.out.println("start Bus");
     }
 
     @Override
     public void finishTheMovement() {
-
+        System.out.println("finish Bus");
     }
 
     @Override
     public String getPitStop() {
-        return getPitStop();
+        return "Проследуйте в депо";
     }
 
     @Override
     public double bestLapTime() {
-        return bestLapTime();
+        return 1.0;
     }
 
     @Override
     public int maxSpeed() {
-        return maxSpeed();
+        return 90;
     }
 
 
