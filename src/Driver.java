@@ -18,10 +18,12 @@ public class Driver<T extends Transport> {
     }
 
     public void startMoving(T transport) {
+        transport.startMoving();
               System.out.println("Водитель " + fullNameDriver + " управляет транспортным средством " + transport.getBrand() + " и будет участвовать в заезде.");
     }
 
-    public void finishMoving() {
+    public void finishMoving(T transport) {
+        transport.finishTheMovement();
         System.out.println("Пора сделать остановку");
     }
 

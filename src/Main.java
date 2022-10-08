@@ -1,4 +1,5 @@
 import need_for_speed.*;
+import org.w3c.dom.ls.LSOutput;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Main {
         Bus luaz = new Bus("Luaz", "AZ", 4);
         Bus paz = new Bus("Paz", "1505", 2.5);
         Bus daaz = new Bus("Daaz", "5502", 4);
-        Bus raf = new Bus("Far", "3002", 2);
+        Bus raf = new Bus("Raf", "3002", 2);
 
         printInfoPassengerCar(vesta);
         printInfoPassengerCar(granta);
@@ -43,6 +44,18 @@ petia.startMoving(kamaz);
 
 Driver<Transport> sasha = new Driver<>("Sasha",true,30);
 sasha.startMoving(raf);
+
+        System.out.println();
+
+        kamaz.DetermineTheTypeOfCar(Cargo.LoadCapacity.N1);
+        raf.DetermineTheTypeOfCar(Bus.Capacity.SMALL);
+        granta.DetermineTheTypeOfCar(PassengerСar.Body.SEDAN);
+
+
+
+
+
+
     }
 
     public static void printInfoPassengerCar(PassengerСar passengerCar) {
@@ -54,4 +67,6 @@ sasha.startMoving(raf);
     public static void printInfoBus(Bus bus) {
         System.out.println(bus.getBrand() + " " + bus.getModel() + ", обьем двигателя " + bus.getEngineVolume());
     }
+
+
 }
