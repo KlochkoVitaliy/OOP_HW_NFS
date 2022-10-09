@@ -56,4 +56,5 @@ public abstract class Transport implements Competing{
 
     public abstract void finishTheMovement();
 
+    public abstract void printTypeAuto();
    }
