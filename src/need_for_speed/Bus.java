@@ -37,19 +37,22 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
-    public String getPitStop() {
-        return "Проследуйте в депо";
+    public void getPitStop() {
+        System.out.println( "Заедь в депо");
     }
 
     @Override
-    public double bestLapTime() {
-        return 1.0;
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга");
     }
 
     @Override
-    public int maxSpeed() {
-        return 90;
+    public void maxSpeed() {
+        System.out.println("максимальная скорость");
     }
 
-
+    @Override
+    public String toString() {
+        return "автобус" + super.toString();
+    }
 }

@@ -13,9 +13,6 @@ public class PassengerСar extends Transport implements Competing{
         return typeOfBody;
     }
 
-    public void setTypeOfBody(TypeOfBody typeOfBody) {
-        this.typeOfBody = typeOfBody;
-    }
 
     @Override
     public void startMoving() {
@@ -28,6 +25,11 @@ public class PassengerСar extends Transport implements Competing{
     }
 
     @Override
+    public String toString() {
+        return "машина: " + super.toString();
+    }
+
+    @Override
     public void printTypeAuto() {
 if(typeOfBody==null){
     System.out.println("Данных по авто недостаточно!");
@@ -37,17 +39,17 @@ if(typeOfBody==null){
     }
 
     @Override
-    public String getPitStop() {
-        return "Stop the line";
+    public void getPitStop() {
+        System.out.println("заехать на Пит-Стоп!!");
     }
 
     @Override
-    public double bestLapTime() {
-        return 2.35;
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга");
     }
 
     @Override
-    public int maxSpeed() {
-        return 200;
+    public void maxSpeed() {
+        System.out.println("максимальная скорость");
     }
 }

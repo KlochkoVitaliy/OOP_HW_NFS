@@ -14,9 +14,6 @@ public class Cargo extends Transport implements Competing {
         return loadCapacity;
     }
 
-    public void setLoadCapacity(LoadCapacity loadCapacity) {
-        this.loadCapacity = loadCapacity;
-    }
 
     @Override
     public void startMoving() {
@@ -40,17 +37,22 @@ public class Cargo extends Transport implements Competing {
     }
 
     @Override
-    public String getPitStop() {
-        return "Остановка на перекур";
+    public void getPitStop() {
+        System.out.println( "Остановка на перекур");
     }
 
     @Override
-    public double bestLapTime() {
-        return 1.4;
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга");
     }
 
     @Override
-    public int maxSpeed() {
-        return 120;
+    public void maxSpeed() {
+        System.out.println("максимальная скорость");
+    }
+
+    @Override
+    public String toString() {
+        return "грузовик" + super.toString();
     }
 }

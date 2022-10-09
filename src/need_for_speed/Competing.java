@@ -2,9 +2,9 @@ package need_for_speed;
 
 public interface Competing {
 
-    String getPitStop();
+     void getPitStop();
 
-    double bestLapTime();
+    void bestLapTime();
 
-    int maxSpeed();
+    void maxSpeed();
 }
