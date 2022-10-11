@@ -2,7 +2,7 @@ package need_for_speed;
 
 public class PassengerСar extends Transport implements Competing{
 
-    private TypeOfBody typeOfBody;
+    final private TypeOfBody typeOfBody;
 
     public PassengerСar(String brand, String model, double engineVolume,TypeOfBody typeOfBody) {
         super(brand, model, engineVolume);
@@ -36,6 +36,11 @@ if(typeOfBody==null){
 }else {
     System.out.println("Тип куова авто -  " + typeOfBody);
 }
+    }
+
+    @Override
+    public boolean checkDiagnostic() {
+        return Math.random()>0.7;
     }
 
     @Override

@@ -43,4 +43,6 @@ public abstract class Transport {
     public abstract void finishTheMovement();
 
     public abstract void printTypeAuto();
+
+    public abstract boolean checkDiagnostic();
 }

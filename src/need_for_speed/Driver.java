@@ -8,7 +8,9 @@ abstract public class Driver<T extends Transport & Competing> {
     private double experience;
     private T car;
 
-    public Driver(String fullNameDriver, Character driverLicense, double experience, T car) {
+    private String category;
+
+    public Driver(String fullNameDriver, Character driverLicense, double experience, String category, T car) {
         if (fullNameDriver == null || fullNameDriver.isEmpty()) {
             throw new NullPointerException("Укажите имя водителя");
         } else {
@@ -23,6 +25,7 @@ abstract public class Driver<T extends Transport & Competing> {
             this.car = car;
         }
         setExperience(experience);
+        setCategory(category);
     }
 
 
@@ -56,6 +59,16 @@ abstract public class Driver<T extends Transport & Competing> {
         } else {
             this.experience = experience;
         }
+    }
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        if(category==null){
+            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+        }
+        this.category = category;
     }
 
     public void diverInfo(Transport transport) {

@@ -37,6 +37,11 @@ public class Cargo extends Transport implements Competing {
     }
 
     @Override
+    public boolean checkDiagnostic() {
+        return Math.random()>0.75;
+    }
+
+    @Override
     public void getPitStop() {
         System.out.println( "Остановка на перекур");
     }

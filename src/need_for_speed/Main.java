@@ -35,9 +35,9 @@ public class Main {
 
         System.out.println();
 
-        DriverB vasia = new DriverB("Васька", 'B', 10, vesta);
-        DriverC alex = new DriverC("Леха", 'C', 15, kamaz);
-        DriverD petia = new DriverD("Петро", 'D', 25, raf);
+        DriverB vasia = new DriverB("Васька", 'B', 10,"B", vesta);
+        DriverC alex = new DriverC("Леха", 'C', 15, "C",kamaz);
+        DriverD petia = new DriverD("Петро", 'D', 25,"D", raf);
 
         System.out.println(alex);
         System.out.println(vasia);
@@ -50,7 +50,30 @@ public class Main {
         petia.diverInfo(raf);
 
         System.out.println();
+        checkDiagnostic(
+                vesta, granta, lada, samara,
+                kamaz, maz, yaz, yural,
+                luaz, paz, daaz, raf
+        );
 
+
+    }
+
+    private static void checkDiagnostic(Transport... transports) {
+        for (Transport transport: transports) {
+           serviceTransport(transport);
+            }
+        }
+
+
+    private static void serviceTransport(Transport transport) {
+        try {
+            if (!transport.checkDiagnostic()) {
+                throw new RuntimeException("Автомобиль" + transport.getBrand() + " " + transport.getModel() + " не прошел диагностику!");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void printInfoPassengerCar(PassengerСar passengerCar) {
