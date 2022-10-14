@@ -60,4 +60,9 @@ public class Cargo extends Transport implements Competing {
     public String toString() {
         return "грузовик" + super.toString();
     }
+
+        @Override
+    public void repairCar() {
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + " отремонтирован");
+    }
 }

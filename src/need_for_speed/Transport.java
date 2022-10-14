@@ -1,9 +1,17 @@
 package need_for_speed;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public abstract class Transport {
     private final String brand;
     private final String model;
     private final double engineVolume;
+
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Mechanics<?>> mechanics = new ArrayList<>();
+    private final List<Sponsor> sponsors = new ArrayList<>();
 
     public Transport(String brand, String model, double engineVolume) {
         if (brand == null && brand.isEmpty()) {
@@ -37,6 +45,17 @@ public abstract class Transport {
         return engineVolume;
     }
 
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public List<Mechanics<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
+    }
 
     public abstract void startMoving();
 
@@ -45,4 +64,16 @@ public abstract class Transport {
     public abstract void printTypeAuto();
 
     public abstract boolean checkDiagnostic();
+
+    public void addDriver(Driver<?>... drivers) {
+        this.drivers.addAll(Arrays.asList(drivers));
+    }
+    public void addMechanic(Mechanics<?>... mechanics) {
+        this.mechanics.addAll(Arrays.asList(mechanics));
+    }
+    public void addSponsor(Sponsor... sponsors) {
+        this.sponsors.addAll(Arrays.asList(sponsors));
+    }
+
+    public abstract void repairCar ();
 }

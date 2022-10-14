@@ -1,13 +1,19 @@
 package need_for_speed;
 
-public class PassengerСar extends Transport implements Competing{
+import java.util.ArrayList;
+
+public class PassengerСar extends Transport implements Competing {
 
     final private TypeOfBody typeOfBody;
 
-    public PassengerСar(String brand, String model, double engineVolume,TypeOfBody typeOfBody) {
+
+    public PassengerСar(String brand, String model, double engineVolume, TypeOfBody typeOfBody) {
         super(brand, model, engineVolume);
-        this.typeOfBody=typeOfBody;
+        this.typeOfBody = typeOfBody;
+
+
     }
+
 
     public TypeOfBody getTypeOfBody() {
         return typeOfBody;
@@ -31,16 +37,21 @@ public class PassengerСar extends Transport implements Competing{
 
     @Override
     public void printTypeAuto() {
-if(typeOfBody==null){
-    System.out.println("Данных по авто недостаточно!");
-}else {
-    System.out.println("Тип куова авто -  " + typeOfBody);
-}
+        if (typeOfBody == null) {
+            System.out.println("Данных по авто недостаточно!");
+        } else {
+            System.out.println("Тип куова авто -  " + typeOfBody);
+        }
     }
 
     @Override
     public boolean checkDiagnostic() {
-        return Math.random()>0.7;
+        return Math.random() > 0.7;
+    }
+
+    @Override
+    public void repairCar() {
+        System.out.println("Машина " + getBrand() + " " + getModel() + " отремонтирована");
     }
 
     @Override
@@ -57,4 +68,6 @@ if(typeOfBody==null){
     public void maxSpeed() {
         System.out.println("максимальная скорость");
     }
+
+
 }

@@ -60,24 +60,25 @@ abstract public class Driver<T extends Transport & Competing> {
             this.experience = experience;
         }
     }
+
     public String getCategory() {
         return category;
     }
 
     public void setCategory(String category) {
-        if(category==null){
+        if (category == null) {
             throw new IllegalArgumentException("Необходимо указать категорию прав!");
         }
         this.category = category;
     }
 
     public void diverInfo(Transport transport) {
-        System.out.println("водитель " + fullNameDriver + " управляет " + car.getBrand() + " " + car.getModel() + " и будет участвовать в заезде." );
+        System.out.println("водитель " + fullNameDriver + " управляет " + car.getBrand() + " " + car.getModel() + " и будет участвовать в заезде.");
         transport.printTypeAuto();
     }
 
     @Override
     public String toString() {
-        return "Имя водителя: " + fullNameDriver + " Категория прав: " + driverLicense + " Опыт вождения: " + experience + " лет.";
+        return fullNameDriver + " ,категория прав: " + driverLicense + ",опыт вождения: " + experience + " лет.";
     }
 }
