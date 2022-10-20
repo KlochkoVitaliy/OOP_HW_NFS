@@ -15,6 +15,8 @@ public class Main {
         PassengerСar vesta = new PassengerСar("Lada", "Vesta", 1.8, TypeOfBody.SEDAN);
         vesta.addDriver(new DriverB("Васька", 'B', 10, "B", vesta));
         vesta.addMechanic(fedia);
+        vesta.addMechanic(fedia);
+        vesta.addSponsor(manol, castrol);
         vesta.addSponsor(manol, castrol);
 
         PassengerСar granta = new PassengerСar("Lada", "Granta", 1.6, TypeOfBody.HATCHBACK);
@@ -86,11 +88,11 @@ public class Main {
 
         System.out.println("Queue");
 
-        ServiceStation<PassengerСar> lutic = new ServiceStation<>("Лютик");
-        lutic.addAutoQueue(vesta);
-        lutic.addAutoQueue(granta);
-        lutic.addAutoQueue(lada);
-        lutic.addAutoQueue(samara);
+        ServiceStation lutic = new ServiceStation("Лютик");
+        lutic.addCarQueue(vesta);
+        lutic.addCarQueue(granta);
+        lutic.addCarQueue(lada);
+        lutic.addCarQueue(samara);
 
         lutic.goTechnicalInspection();
     }

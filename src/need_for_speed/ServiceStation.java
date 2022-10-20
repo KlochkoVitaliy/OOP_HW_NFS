@@ -3,17 +3,23 @@ package need_for_speed;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ServiceStation<T extends Transport> {
+public class ServiceStation {
 
     private String name;
-    private Queue<T> queue = new LinkedList<>();
+    private Queue<Transport> queue = new LinkedList<>();
 
-    public void addAutoQueue(T transport) {
+    private void addAutoQueue(Transport transport) {
         queue.offer(transport);
+    }
+    public void addCarQueue(PassengerСar passengerСar) {
+        addAutoQueue(passengerСar);
+    }
+    public void addCargoQueue(Cargo cargo) {
+        addAutoQueue(cargo);
     }
 
 public void goTechnicalInspection(){
-    T transport = queue.poll();
+    Transport transport = queue.poll();
     if(transport!=null){
         System.out.println("Проведен техъосмотр авто " + transport.getBrand()+ " " + transport.getModel());
         goTechnicalInspection();

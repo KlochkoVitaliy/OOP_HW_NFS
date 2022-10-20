@@ -1,17 +1,15 @@
 package need_for_speed;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public abstract class Transport {
     private final String brand;
     private final String model;
     private final double engineVolume;
 
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Mechanics<?>> mechanics = new ArrayList<>();
-    private final List<Sponsor> sponsors = new ArrayList<>();
+    private final Set<Driver<?>> drivers = new HashSet<>();
+    private final Set<Mechanics<?>> mechanics = new HashSet<>();
+    private final Set<Sponsor> sponsors = new HashSet<>();
 
     public Transport(String brand, String model, double engineVolume) {
         if (brand == null && brand.isEmpty()) {
@@ -45,15 +43,15 @@ public abstract class Transport {
         return engineVolume;
     }
 
-    public List<Driver<?>> getDrivers() {
+    public Set<Driver<?>> getDrivers() {
         return drivers;
     }
 
-    public List<Mechanics<?>> getMechanics() {
+    public Set<Mechanics<?>> getMechanics() {
         return mechanics;
     }
 
-    public List<Sponsor> getSponsors() {
+    public Set<Sponsor> getSponsors() {
         return sponsors;
     }
 
