@@ -1,6 +1,8 @@
 package need_for_speed;
 
 
+import java.util.Objects;
+
 abstract public class Driver<T extends Transport & Competing> {
 
     final private String fullNameDriver;
@@ -80,5 +82,22 @@ abstract public class Driver<T extends Transport & Competing> {
     @Override
     public String toString() {
         return fullNameDriver + " ,категория прав: " + driverLicense + ",опыт вождения: " + experience + " лет.";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return Double.compare(driver.experience, experience) == 0 &&
+                Objects.equals(fullNameDriver, driver.fullNameDriver) &&
+                Objects.equals(driverLicense, driver.driverLicense) &&
+                Objects.equals(car, driver.car) &&
+                Objects.equals(category, driver.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullNameDriver, driverLicense, experience, car, category);
     }
 }

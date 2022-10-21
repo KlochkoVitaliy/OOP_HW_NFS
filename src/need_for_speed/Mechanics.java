@@ -1,5 +1,7 @@
 package need_for_speed;
 
+import java.util.Objects;
+
 public class Mechanics<T extends Transport> {
 
     private final String firstName;
@@ -35,5 +37,18 @@ public class Mechanics<T extends Transport> {
     @Override
     public String toString() {
         return firstName + " "+ secondName + " из кампании - " + company;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanics<?> mechanics = (Mechanics<?>) o;
+        return Objects.equals(firstName, mechanics.firstName) && Objects.equals(secondName, mechanics.secondName) && Objects.equals(company, mechanics.company);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, secondName, company);
     }
 }
